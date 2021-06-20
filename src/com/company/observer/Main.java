@@ -1,8 +1,12 @@
 package com.company.observer;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Main {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
 
         //publisher -> Subject
         //subscriber -> Observer
@@ -31,6 +35,19 @@ public class Main {
         System.out.println("=========================");
 
         subject.notifyObservers("Fuel prices gone up!");
+
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        String news;
+
+        while (true) {
+            System.out.println("Enter news:");
+            news = bufferedReader.readLine();
+            if (news.isEmpty()) {
+                break;
+            }
+            subject.notifyObservers(news);
+            System.out.println("=========================");
+        }
 
     }
 
