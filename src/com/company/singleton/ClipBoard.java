@@ -6,11 +6,11 @@ public class ClipBoard {
 
     private static ClipBoard clipBoard;
 
-    private ClipBoard(){
+    private ClipBoard() {
         System.out.println("Clip board object created.");
     }
 
-    public static ClipBoard getInstance(){
+    public static ClipBoard getInstance() {
 
         if (clipBoard == null) {
             clipBoard = new ClipBoard();
@@ -20,12 +20,12 @@ public class ClipBoard {
     }
 
     //copy
-    public void copy(String text){
+    public void copy(String text) {
         this.content = text;
     }
 
     //paste
-    public void paste(){
+    public void paste() {
         System.out.println(this.content);
     }
 
